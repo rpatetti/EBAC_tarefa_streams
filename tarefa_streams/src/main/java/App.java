@@ -1,3 +1,5 @@
+package main.java;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -28,19 +30,17 @@ public class App {
                 }
             }
 
-            List<Person> women = people.stream()
-                    .filter(p -> {
-                        if (p.getGender().equalsIgnoreCase("Female")) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    })
-                    .collect(Collectors.toList());
+        List<Person> women = filtrarMulheres(people);
 
         System.out.println("Lista de mulheres; ");
         women.forEach(p -> System.out.println(p.getName()));
 
         scanner.close();
+    }
+
+    private static List<Person> filtrarMulheres(List<Person> people) {
+        return people.stream()
+                .filter(p -> p.getGender().equalsIgnoreCase("female"))
+                .collect(Collectors.toList());
     }
 }

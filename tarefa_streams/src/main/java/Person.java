@@ -1,5 +1,4 @@
-import java.util.List;
-import java.util.Objects;
+package main.java;
 
 public class Person {
 
